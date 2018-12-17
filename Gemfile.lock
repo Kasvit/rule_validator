@@ -9,6 +9,7 @@ GEM
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    redis (4.1.0)
 
 PLATFORMS
   ruby
@@ -16,9 +17,7 @@ PLATFORMS
 DEPENDENCIES
   pry
   rack-test
-
-RUBY VERSION
-   ruby 2.4.3p205
+  redis
 
 BUNDLED WITH
    1.16.3
