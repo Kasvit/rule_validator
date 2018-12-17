@@ -1,53 +1,22 @@
-{
-  report_in_company_bp: {
-    resource: 'report_in_company_bp',
-    description: 'allow access to bp report',
-    params: {
-      id: 123,
-      bp_id: 'abc123',
-      report_id: 128
-    },
-    participant: {
-      id: 123
-    },
-    methods: ['GET', 'PUT'],
-    action: 'allow'
-  },
-  fake: {
-    resource: 'fake',
-    description: 'allow access to bp report',
-    params: {
-      id: 3,
-      bp_id: 'abc123',
-      report_id: 3
-    },
-    participant: {
-      id: 3
-    },
-    methods: ['GET', 'PUT'],
-    action: 'not_allow'
-  }
-}
-
-# - :report_in_company_bp:
-#   :resource: 'report_in_company_bp'
-#   :description: 'allow access to bp report'
-#   :params:
-#     :id: 123
-#     :bp_id: 'abc123'
-#     :report_id: 128
-#   :participant:
-#     :id: 123
-#   :methods: ['GET', 'PUT']
-#   :action: 'allow'
-# - :fake:
-#   :resource: 'fake'
-#   :description: 'allow access to bp report'
-#   :params:
-#     :id: 3
-#     :bp_id: 'abc123'
-#     :report_id: 3
-#   :participant:
-#     :id: 3
-#   :methods: ['GET', 'PUT']
-#   :action: 'not_allow'
+:report_in_company_bp:
+  :resource: 'report_in_company_bp'
+  :description: 'allow access to bp report'
+  :params:
+    :id: 123
+    :bp_id: 'abc123'
+    :report_id: 128
+  :participant:
+    :id: 123
+  :methods: ['GET', 'PUT']
+  :action: 'allow'
+:fake:
+  :resource: 'fake'
+  :description: 'allow access to bp report'
+  :params:
+    :id: 3
+    :bp_id: 'abc123'
+    :report_id: 3
+  :participant:
+    :id: 3
+  :methods: ['GET', 'PUT']
+  :action: 'not_allow'
