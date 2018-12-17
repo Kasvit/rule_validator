@@ -1,5 +1,7 @@
-require 'yaml'
 require_relative 'base_storage'
+
+require 'yaml'
+
 class YamlFileStorage < BaseStorage
   def initialize
     @rules = YAML.load_file('lib/storages/rules.yml')

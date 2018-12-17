@@ -2,7 +2,6 @@ require_relative '../lib/parsed_request'
 
 require "test/unit"
 require 'minitest/autorun'
-require 'pry'
 
 class ValidatorTest < Minitest::Test
 

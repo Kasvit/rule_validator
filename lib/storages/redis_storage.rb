@@ -1,7 +1,6 @@
 require 'redis'
 require_relative 'base_storage'
 
-# RedisStorage class store data in redis db
 class RedisStorage < BaseStorage
   def initialize
     @redis_rules = Redis.new
@@ -18,7 +17,6 @@ class RedisStorage < BaseStorage
                                             :participant, {id: 123},
                                             :methods, 'GET',
                                             :action,  'allow')
-    p @redis_rules.hgetall('report_in_company_bp_new')
   end
 
   def find_rule(rule_name)

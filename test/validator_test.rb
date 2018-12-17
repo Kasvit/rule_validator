@@ -1,14 +1,14 @@
 require_relative '../lib/validator'
 require_relative '../lib/parsed_request'
-require_relative '../lib/storage'
+require_relative '../lib/storages/yaml_file_storage'
+
 require "test/unit"
 require 'minitest/autorun'
-require 'pry'
 
 class ValidatorTest < Minitest::Test
 
   def setup
-    @storage = Storage.new(RulesYamlFileProvider.load(filename = 'lib/storages/rules.yml'))
+    @storage = YamlFileStorage.new
     @validator = Validator.new(@storage)
     @request1 = ParsedRequest.new({
       report_in_company_bp: {

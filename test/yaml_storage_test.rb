@@ -1,6 +1,7 @@
 require_relative '../lib/storages/yaml_file_storage'
+
 require 'minitest/autorun'
-# Tests for RedisStorage
+
 class YamlStorageTest < Minitest::Test
   def setup
     @storage = YamlFileStorage.new
