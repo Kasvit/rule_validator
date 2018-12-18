@@ -24,7 +24,7 @@ class RedisStorage < BaseStorage
   end
 
   def add_rule(rule_name, **rule)
-    @redis_rules.hdel(rule_name, ['resource', 'description', 'params',
+    @redis_rules.hdel(rule_name, ['resource','description', 'params',
                                   'participant', 'methods', 'action'])
     @redis_rules.hmset(rule_name,  :resource, rule[:resource],
                                    :description, rule[:description],
