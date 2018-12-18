@@ -15,4 +15,16 @@ class RedisStorageTest < Minitest::Test
     rule = @storage.find_rule('second_resourse')
     assert_equal rule['resource'], 'second_resourse'
   end
+
+  def test_true_on_add_new_resourse_in_storage
+    @storage.add_rule('new_resourse', { resource: 'new_resourse',
+                                        description: 'allow access to second resourse',
+                                        params: { id: 123, bp_id: 'abc123', report_id: 128 },
+                                        participant: {id: 123},
+                                        methods: 'GET',
+                                        action:  'allow' })
+
+    rule = @storage.find_rule('new_resourse')
+    assert_equal rule['resource'], 'new_resourse'
+  end
 end

@@ -3,14 +3,14 @@ require_relative '../lib/parsed_request'
 require "test/unit"
 require 'minitest/autorun'
 
-class ValidatorTest < Minitest::Test
+class ParsedRequestTest < Minitest::Test
 
   def setup
     @request = ParsedRequest.new( {
       report_in_company_bp: {
         id: 123,
         bp_id: 'abc123',
-        report_id: 128 
+        report_id: 128
       }
     })
   end
