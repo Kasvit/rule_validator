@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative '../lib/storages/mongo_storage'
 
-class AppTest < Minitest::Test
+class MongoTest < Minitest::Test
 
   def setup
     @storage = MongoStorage.new
