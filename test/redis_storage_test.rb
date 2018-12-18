@@ -1,6 +1,6 @@
 require_relative '../lib/storages/redis_storage'
 require 'minitest/autorun'
-require "pry"
+
 class RedisStorageTest < Minitest::Test
   def setup
     @storage = RedisStorage.new

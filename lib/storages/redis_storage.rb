@@ -1,6 +1,5 @@
 require 'redis'
 require_relative 'base_storage'
-require "pry"
 
 class RedisStorage < BaseStorage
   def initialize
