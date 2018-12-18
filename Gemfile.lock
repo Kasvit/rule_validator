@@ -21,6 +21,7 @@ PLATFORMS
 DEPENDENCIES
   mongo
   pry
+  rack
   rack-test
   redis
 
