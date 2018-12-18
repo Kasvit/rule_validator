@@ -11,6 +11,7 @@ class Validator
   def valid?(parsed_request)
     rule = @storage.find_rule(parsed_request.name)
     return false unless rule
+
     parsed_request.params == rule[:params]
   end
 end
