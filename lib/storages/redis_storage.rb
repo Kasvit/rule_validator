@@ -5,18 +5,18 @@ class RedisStorage < BaseStorage
   def initialize
     @redis_rules = Redis.new
 
-    @redis_rules.hmset('report_in_company_bp_new',:resource, 'report_in_company_bp',
+    @redis_rules.hmset('report_in_company_bp', :resource, 'report_in_company_bp',
                                                   :description, 'allow access to bp report',
                                                   :params, { id: 123, bp_id: 'abc123', report_id: 128 },
                                                   :participant, {id: 123},
                                                   :methods, 'GET, POST',
                                                   :action, 'allow')
-    @redis_rules.hmset('second_resourse1',  :resource, 'second_resourse1',
+    @redis_rules.hmset('second_resourse',  :resource, 'second_resourse',
                                             :description, 'allow access to second resourse',
                                             :params, { id: 123, bp_id: 'abc123', report_id: 128 },
                                             :participant, {id: 123},
                                             :methods, 'GET',
-                                            :action,  'allow')
+                                            :action, 'allow')
   end
 
   def find_rule(rule_name)
@@ -31,6 +31,6 @@ class RedisStorage < BaseStorage
                                    :params, rule[:params],
                                    :participant, rule[:participant],
                                    :methods, rule[:methods],
-                                   :action,  rule[:action])
+                                   :action, rule[:action])
   end
 end
