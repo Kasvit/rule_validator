@@ -12,12 +12,12 @@ class MyRackMiddleware
     @env = env
     request(env)
     status, headers, body = @appl.call(env) # we now call the inner application
-    # @check_wl =  WhiteListChecker.new(http_host, path_info, request_method)
-    # if @check_wl.host_present?
-       response_rack("200", "Success")
-    # else
-    #   response_rack("401", "Failed")
-    # end
+    @check_wl = WhiteListChecker.new(http_host, path_info, request_method)
+    if @check_wl.host_present?
+      response_rack("200", "Success")
+    else
+      response_rack("401", "Failed")
+    end
   end
 
   private
