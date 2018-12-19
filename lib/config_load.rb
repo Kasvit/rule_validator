@@ -1,8 +1,7 @@
 require 'yaml'
 
 class ConfigLoad
-
-  def self.load_white_list
-    YAML::load_file(File.join(__dir__, '../config/white_list.yml'))
+  def self.load_file(path)
+    YAML.load_file(File.join(__dir__, path))
   end
 end

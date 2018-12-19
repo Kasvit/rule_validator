@@ -1,6 +1,7 @@
+# WhiteListChecker
 class WhiteListChecker
   def initialize(http_host, path, request_method)
-    @wl = ConfigLoad.load_white_list
+    @wl = ConfigLoad.load_file('../config/white_list.yml')
     @path_info = path.split('/')[1]
     @request_method = request_method
     @domain = http_host.split('.')[0]
