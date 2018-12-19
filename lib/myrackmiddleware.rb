@@ -1,5 +1,6 @@
-
-require 'pry'
+require_relative 'parsing_rule'
+require_relative 'validator'
+require_relative 'storages/yaml_file_storage'
 
 class MyRackMiddleware
   attr_reader :request
@@ -16,11 +17,18 @@ class MyRackMiddleware
     if @check_wl.host_present?
       response_rack("200", "Success")
     else
+      #call_validator? ? response_rack("200", "Success") : response_rack("401", "Failed")
       response_rack("401", "Failed")
     end
   end
 
   private
+
+  def call_validator?
+    @pr = ParsingRule.new
+    @validator = Validator.new(YamlFileStorage.new)
+    @validator.valid?(@pr.get_route_object(http_host))
+  end
 
   def request(env)
     @request = Rack::Request.new(env)

@@ -32,7 +32,9 @@ class RackWhitelistTest < Test::Unit::TestCase
   def test_status_401_with_domen_auth_signupp
     get 'http://auth.com/signupp'
     assert_equal(last_response.status, 401)
+    #assert_raises(RuntimeError)
   end
+
 
   def test_status_200_with_domen_resources_countries_method_get
     get 'http://resources.com/countries'

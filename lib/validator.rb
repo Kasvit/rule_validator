@@ -4,7 +4,7 @@ require_relative 'parsed_request'
 class Validator
   attr_reader :storage
 
-  def initialize(storage = BaseStorage.new)
+  def initialize(storage)
     @storage = storage
   end
 
