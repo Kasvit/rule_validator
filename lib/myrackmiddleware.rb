@@ -9,7 +9,6 @@ class MyRackMiddleware
     @appl = appl
     @pr = ParsingRule.new
     @validator = Validator.new(YamlFileStorage.new)
-    p ARGV
   end
 
   def call(env)
