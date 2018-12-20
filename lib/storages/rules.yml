@@ -20,3 +20,13 @@
     :id: 3
   :methods: ['GET', 'PUT']
   :action: 'not_allow'
+:account_workspaces_members:
+  :resource: 'account_workspaces_members'
+  :description: 'allow access to workspaces members'
+  :params:
+    ':workspace_id': '12'
+    ':id': 'admin'
+  :participant:
+    :id: 123
+  :methods: ['GET', 'PUT']
+  :action: 'allow'

@@ -10,7 +10,8 @@ class ParsingRule
   end
 
   def get_route_object(route)
-    return @tree.route_obj if @tree.include?(route)
+    ro = @tree.route_obj
+    return { ro['name'].to_sym => ro.delete_if{|key, value| key == 'name' } } if @tree.include?(route)
 
     raise 'Route missing'
   end

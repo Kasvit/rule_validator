@@ -1,4 +1,6 @@
 ---
+example:
+  - ''
 auth:
  - signup
 

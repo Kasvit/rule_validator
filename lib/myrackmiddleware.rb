@@ -11,14 +11,13 @@ class MyRackMiddleware
 
   def call(env)
     @env = env
-    request(env)
-    status, headers, body = @appl.call(env) # we now call the inner application
     @check_wl = WhiteListChecker.new(http_host, path_info, request_method)
     if @check_wl.host_present?
       response_rack("200", "Success")
-    else
-      #call_validator? ? response_rack("200", "Success") : response_rack("401", "Failed")
+    elsif path_info == '/'
       response_rack("401", "Failed")
+    else
+      call_validator? ? response_rack("200", "Success") : response_rack("401", "Failed")
     end
   end
 
@@ -27,11 +26,7 @@ class MyRackMiddleware
   def call_validator?
     @pr = ParsingRule.new
     @validator = Validator.new(YamlFileStorage.new)
-    @validator.valid?(@pr.get_route_object(http_host))
-  end
-
-  def request(env)
-    @request = Rack::Request.new(env)
+    @validator.valid?(ParsedRequest.new(@pr.get_route_object(path_info[1..-1])))
   end
 
   def response_rack(status, header)

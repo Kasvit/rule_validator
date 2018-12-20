@@ -8,7 +8,7 @@ class ParsingRuleTest < Minitest::Test
 
   def test_object_on_valid_route_1
     assert_equal @pr.get_route_object('account/workspaces/12/members/admin'),
-     {":workspace_id"=>"12", ":id"=>"admin", "name"=>"account_workspaces_members"}
+     { account_workspaces_members:{":workspace_id"=>"12", ":id"=>"admin"} }
   end
 
   def test_raise_on_not_valid_route_1
@@ -19,7 +19,7 @@ class ParsingRuleTest < Minitest::Test
 
   def test_object_on_valid_route_2
     assert_equal @pr.get_route_object('account/task/5'),
-      {":id"=>"5", "name"=>"account_task"}
+      { account_task: {":id"=>"5"} }
   end
 
   def test_raise_on_not_valid_route_2
