@@ -2,6 +2,12 @@ require './lib/my_app'
 require './lib/myrackmiddleware'
 require './lib/white_list_checker'
 require './lib/config_load'
+require './lib/db_factory'
+require './lib/validator'
+require './lib/parsing_rule'
+require './lib/storages/yaml_file_storage'
+require './lib/storages/redis_storage'
+require './lib/storages/mongo_storage'
 use Rack::Reloader
 use MyRackMiddleware
 run MyApp.new

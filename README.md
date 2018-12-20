@@ -2,5 +2,7 @@
 
 ### Start<br/>
 ```sh
- $ rackup config.ru
+ $ rackup {storage} config.ru
  ```
+
+ storage: yaml, redis, mongo
