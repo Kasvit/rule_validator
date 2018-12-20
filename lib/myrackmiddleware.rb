@@ -1,5 +1,4 @@
 # Middleware class
-require "pry"
 
 class RuleValidator
   attr_reader :request

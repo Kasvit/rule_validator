@@ -8,11 +8,9 @@ require_relative '../lib/storages/yaml_file_storage'
 require_relative '../lib/storages/redis_storage'
 require_relative '../lib/storages/mongo_storage'
 require_relative '../lib/validator'
-require "pry"
 require 'test/unit'
 require 'rack/test'
 # Test
-
 
 class RackWhitelistTest < Test::Unit::TestCase
   include Rack::Test::Methods

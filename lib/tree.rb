@@ -1,5 +1,3 @@
-require "pry"
-
 class Tree
   attr_reader :route_obj
 
