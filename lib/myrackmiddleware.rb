@@ -7,6 +7,9 @@ class MyRackMiddleware
 
   def initialize(appl)
     @appl = appl
+    @pr = ParsingRule.new
+    @validator = Validator.new(YamlFileStorage.new)
+    p ARGV
   end
 
   def call(env)
@@ -24,8 +27,6 @@ class MyRackMiddleware
   private
 
   def call_validator?
-    @pr = ParsingRule.new
-    @validator = Validator.new(YamlFileStorage.new)
     @validator.valid?(ParsedRequest.new(@pr.get_route_object(path_info[1..-1])))
   end
 

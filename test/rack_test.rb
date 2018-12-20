@@ -2,8 +2,8 @@ require_relative '../lib/my_app'
 require_relative '../lib/myrackmiddleware'
 require_relative '../lib/config_load'
 require_relative '../lib/white_list_checker'
+require_relative '../lib/parsing_rule'
 
-require 'pry'
 require 'test/unit'
 require 'rack/test'
 # Test
