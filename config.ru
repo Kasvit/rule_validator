@@ -9,5 +9,5 @@ require './lib/storages/yaml_file_storage'
 require './lib/storages/redis_storage'
 require './lib/storages/mongo_storage'
 use Rack::Reloader
-use MyRackMiddleware
+use RuleValidator
 run MyApp.new

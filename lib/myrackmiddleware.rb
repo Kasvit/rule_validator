@@ -1,11 +1,12 @@
 # Middleware class
-class MyRackMiddleware
+
+class RuleValidator
   attr_reader :request
 
-  def initialize(appl)
+  def initialize(appl, select_db = ARGV[0])
     @appl = appl
     @pr = ParsingRule.new
-    @validator = Validator.new(DbFactory.get_db(ARGV[0]))
+    @validator = Validator.new(DbFactory.get_db(select_db))
   end
 
   def call(env)
