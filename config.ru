@@ -1,13 +1,4 @@
-require './lib/my_app'
-require './lib/rule_validator'
-require './lib/white_list_checker'
-require './lib/config_load'
-require './lib/db_factory'
-require './lib/validator'
-require './lib/parsing_route/parsing_rule'
-require './lib/storages/yaml_file_storage'
-require './lib/storages/redis_storage'
-require './lib/storages/mongo_storage'
+Dir["#{File.dirname(__FILE__)}/lib/**/*.rb"].each { |file| require file }
 use Rack::Reloader
 use RuleValidator
 run MyApp.new

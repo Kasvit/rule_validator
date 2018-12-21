@@ -5,8 +5,7 @@ class RuleValidator
   def initialize(appl)
     @appl = appl
     @pr = ParsingRule.new
-    @validator = Validator.new(DbFactory.get_db(db))
-    db
+    @validator = Validator.new(DbFactory.db(db))
   end
 
   def call(env)
@@ -28,7 +27,7 @@ class RuleValidator
   end
 
   def call_validator?
-    @validator.valid?(ParsedRequest.new(@pr.get_route_object(path_info[1..-1])))
+    @validator.valid?(ParsedRequest.new(@pr.route_object(path_info[1..-1])))
   end
 
   def response_rack(status, header)

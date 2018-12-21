@@ -1,6 +1,6 @@
 # DataBase factory
 class DbFactory
-  def self.get_db(db = 'yaml')
+  def self.db(db = 'yaml')
     if db == 'yaml'
       YamlFileStorage.new
     elsif db == 'redis'

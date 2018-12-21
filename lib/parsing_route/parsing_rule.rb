@@ -9,9 +9,9 @@ class ParsingRule
     @routes.each { |route| @tree.add_route(route[1], route[0]) }
   end
 
-  def get_route_object(route)
+  def route_object(route)
     ro = @tree.route_obj
-    return { ro['name'].to_sym => ro.delete_if{|key, value| key == 'name' } } if @tree.include?(route)
+    return { ro['name'].to_sym => ro.delete_if{|key| key == 'name' } } if @tree.include?(route)
 
     raise 'Route missing'
   end
