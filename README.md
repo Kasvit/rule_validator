@@ -2,7 +2,9 @@
 
 ### Start<br/>
 ```sh
- $ rackup {storage} config.ru
+ $ rackup config.ru
  ```
 
- storage: yaml, redis, mongo
+ Database of rules - config/rules_db.yml
+
+ database: {yaml}, {redis}, {mongo}

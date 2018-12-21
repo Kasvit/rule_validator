@@ -1,12 +1,12 @@
 # Middleware class
-
 class RuleValidator
   attr_reader :request
 
-  def initialize(appl, select_db = ARGV[0])
+  def initialize(appl)
     @appl = appl
     @pr = ParsingRule.new
-    @validator = Validator.new(DbFactory.get_db(select_db))
+    @validator = Validator.new(DbFactory.get_db(db))
+    db
   end
 
   def call(env)
@@ -22,6 +22,10 @@ class RuleValidator
   end
 
   private
+
+  def db
+    ConfigLoad.load_file('../config/rules_db.yml')[:database]
+  end
 
   def call_validator?
     @validator.valid?(ParsedRequest.new(@pr.get_route_object(path_info[1..-1])))

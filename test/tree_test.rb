@@ -1,6 +1,6 @@
 require 'minitest/autorun'
-require_relative '../lib/tree'
-require_relative '../lib/node'
+require_relative '../lib/parsing_route/tree'
+require_relative '../lib/parsing_route/node'
 
 class TreeTest < Minitest::Test
   def setup

@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../lib/parsing_rule'
+require_relative '../lib/parsing_route/parsing_rule'
 
 class ParsingRuleTest < Minitest::Test
   def setup

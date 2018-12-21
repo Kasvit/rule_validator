@@ -1,4 +1,4 @@
-require_relative 'config_load'
+require_relative '../config_load'
 require_relative 'tree'
 require_relative 'node'
 

@@ -1,5 +1,4 @@
 require_relative 'base_storage'
-
 require 'yaml'
 
 class YamlFileStorage < BaseStorage
