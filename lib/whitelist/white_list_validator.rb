@@ -1,22 +1,17 @@
 # Middleware class
-class WhiteLIstValidator
+class WhiteListValidator
   attr_reader :request
 
   def initialize(appl)
     @appl = appl
-
   end
 
   def call(env)
     @env = env
+    status, headers, body = @appl.call(env)
     @check_wl = WhiteListChecker.new(http_host, path_info, request_method)
-    if @check_wl.host_present?
-      response_rack('200', 'Success')
-    elsif path_info == '/'
-      response_rack('401', 'Failed')
-    else
-      call_validator? ? response_rack('200', 'Success') : response_rack('401', 'Failed')
-    end
+    @check_wl.host_present? ? status = 200 : status = 401
+    [status, headers, body]
   end
 
   private
