@@ -1,4 +1,4 @@
-require_relative '../lib/storages/base_storage'
+require_relative '../lib/rule_validator_middleware/storages/base_storage'
 require_relative 'parsed_request'
 
 class Validator
