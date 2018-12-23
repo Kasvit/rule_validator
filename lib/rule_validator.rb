@@ -10,13 +10,12 @@ class RuleValidator
 
   def call(env)
     @env = env
-    @check_wl = WhiteListChecker.new(http_host, path_info, request_method)
-    if @check_wl.host_present?
-      response_rack('200', 'Success')
-    elsif path_info == '/'
-      response_rack('401', 'Failed')
+    status, headers, body = @appl.call(env)
+    if status == 200
+      response_rack('200', 'Success', body)
     else
-      call_validator? ? response_rack('200', 'Success') : response_rack('401', 'Failed')
+      #p 'in RuleValidator'
+      call_validator? ? response_rack('200', 'Success', body) : response_rack('401', 'Failed', body)
     end
   end
 
@@ -30,9 +29,10 @@ class RuleValidator
     @validator.valid?(ParsedRequest.new(@pr.route_object(path_info[1..-1])))
   end
 
-  def response_rack(status, header)
+  def response_rack(status, header, body)
     resp = Rack::Response.new
     resp.status = status
+    resp.body = body
     resp.set_header('X-Auth-User', header)
     resp.finish
   end
