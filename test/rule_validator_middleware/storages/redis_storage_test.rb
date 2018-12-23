@@ -1,4 +1,4 @@
-require_relative '../lib/storages/redis_storage'
+require_relative '../../../lib/rule_validator_middleware/storages/redis_storage'
 require 'minitest/autorun'
 
 class RedisStorageTest < Minitest::Test

@@ -14,7 +14,6 @@ class RuleValidator
     if status == 200
       response_rack('200', 'Success', body)
     else
-      #p 'in RuleValidator'
       call_validator? ? response_rack('200', 'Success', body) : response_rack('401', 'Failed', body)
     end
   end
@@ -35,14 +34,6 @@ class RuleValidator
     resp.body = body
     resp.set_header('X-Auth-User', header)
     resp.finish
-  end
-
-  def request_method
-    @env['REQUEST_METHOD']
-  end
-
-  def http_host
-    @env['HTTP_HOST']
   end
 
   def path_info

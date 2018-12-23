@@ -1,4 +1,4 @@
-require_relative '../lib/storages/yaml_file_storage'
+require_relative '../../../lib/rule_validator_middleware/storages/yaml_file_storage'
 
 require 'minitest/autorun'
 

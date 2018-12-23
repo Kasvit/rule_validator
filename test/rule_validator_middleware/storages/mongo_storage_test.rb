@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../lib/storages/mongo_storage'
+require_relative '../../../lib/rule_validator_middleware/storages/mongo_storage'
 
 class MongoTest < Minitest::Test
 
