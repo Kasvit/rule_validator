@@ -1,4 +1,4 @@
-#Dir["#{File.dirname(__FILE__)}/../lib/**/*.rb"].each { |file| require file }
+#Dir["#{File.dirname(__FILE__)} /../lib/**/*.rb"].each { |file| require file }
 require_relative "../lib/config_load.rb"
 require_relative "../lib/jwt_validator_middleware/algorithms/hmac.rb"
 require_relative "../lib/jwt_validator_middleware/algorithms/rs256.rb"
@@ -6,7 +6,7 @@ require_relative "../lib/jwt_validator_middleware/base_service.rb"
 require_relative "../lib/jwt_validator_middleware/exceptions.rb"
 require_relative "../lib/jwt_validator_middleware/jwt_validator.rb"
 require_relative "../lib/my_app.rb"
-require_relative "../lib/parsed_request.rb"
+require_relative "../lib/rule_validator_middleware/parsed_request.rb"
 require_relative "../lib/rule_validator_middleware/db_factory.rb"
 require_relative "../lib/rule_validator_middleware/parsing_route/node.rb"
 require_relative "../lib/rule_validator_middleware/parsing_route/parsing_rule.rb"
@@ -16,7 +16,7 @@ require_relative "../lib/rule_validator_middleware/storages/base_storage.rb"
 require_relative "../lib/rule_validator_middleware/storages/mongo_storage.rb"
 require_relative "../lib/rule_validator_middleware/storages/redis_storage.rb"
 require_relative "../lib/rule_validator_middleware/storages/yaml_file_storage.rb"
-require_relative "../lib/validator.rb"
+require_relative "../lib/rule_validator_middleware/validator.rb"
 require_relative "../lib/whitelist_middleware/white_list_checker.rb"
 require_relative "../lib/whitelist_middleware/white_list_validator.rb"
 

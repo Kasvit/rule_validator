@@ -13,7 +13,7 @@ class RuleValidator
     status, headers, body = @appl.call(env)
     if status == 200
       response_rack('200', 'Success', body)
-    elsif status == 401 && headers['X-Auth-User']
+    elsif status == 401 && (headers['X-Auth-User'] || @env['HTTP_X_AUTH_USER'] )
       call_validator? ? response_rack('200', 'Success', body) : response_rack('401', 'Failed', body)
     else
       response_rack('401', 'Failed', body)
