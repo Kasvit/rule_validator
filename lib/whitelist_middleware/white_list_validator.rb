@@ -1,4 +1,5 @@
 # Middleware class
+require 'pry'
 class WhiteListValidator
   attr_reader :request
 
