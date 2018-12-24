@@ -16,7 +16,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   mongo
@@ -26,4 +25,4 @@ DEPENDENCIES
   redis
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
