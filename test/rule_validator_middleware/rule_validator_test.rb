@@ -6,7 +6,7 @@ require_relative '../../lib/rule_validator_middleware/db_factory'
 require_relative '../../lib/rule_validator_middleware/storages/yaml_file_storage'
 require_relative '../../lib/rule_validator_middleware/storages/redis_storage'
 require_relative '../../lib/rule_validator_middleware/storages/mongo_storage'
-require_relative '../../lib/validator'
+require_relative '../../lib/rule_validator_middleware/validator'
 require 'test/unit'
 require 'rack/test'
 

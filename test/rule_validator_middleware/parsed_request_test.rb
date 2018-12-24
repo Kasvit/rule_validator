@@ -1,4 +1,4 @@
-require_relative '../lib/parsed_request'
+require_relative '../../lib/rule_validator_middleware/parsed_request'
 
 require "test/unit"
 require 'minitest/autorun'
