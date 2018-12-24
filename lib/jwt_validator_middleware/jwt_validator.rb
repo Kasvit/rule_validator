@@ -15,7 +15,8 @@ class JwtValidator
   def call(env)
     @env = env
     status, header, body = @app.call(env)
-    header['X-Auth-User'] = payload.to_s if payload
+    jwt_response = payload
+    header['X-Auth-User'] = jwt_response.to_s if jwt_response
     [status, header, body]
   end
 
