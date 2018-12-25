@@ -1,5 +1,4 @@
 require_relative '../../../lib/rule_validator_middleware/storages/yaml_file_storage'
-
 require 'minitest/autorun'
 
 class YamlStorageTest < Minitest::Test
@@ -15,5 +14,10 @@ class YamlStorageTest < Minitest::Test
   def test_true_on_rule_second_resourse_in_storage
     rule = @storage.find_rule('fake')
     assert_equal rule[:resource], 'fake'
+  end
+
+  def test_true_on_rule_with_method
+    rule = @storage.find_rule('report_in_company_bp')
+    assert_equal rule[:methods], ["GET", "PUT"]
   end
 end

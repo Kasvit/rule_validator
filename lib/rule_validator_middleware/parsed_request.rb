@@ -1,9 +1,10 @@
 class ParsedRequest
 
-  attr_reader :request_body
+  attr_reader :request_body, :request_method
 
-  def initialize(request_body)
+  def initialize(request_body, request_method)
     @request_body = request_body
+    @request_method = request_method
   end
 
   def name
@@ -12,5 +13,9 @@ class ParsedRequest
 
   def params
     @request_body.values[0]
+  end
+
+  def incoming_method
+    @request_method
   end
 end

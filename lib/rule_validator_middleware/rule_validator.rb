@@ -27,7 +27,7 @@ class RuleValidator
   end
 
   def call_validator?
-    @validator.valid?(ParsedRequest.new(@pr.route_object(path_info[1..-1])))
+    @validator.valid?(ParsedRequest.new(@pr.route_object(path_info[1..-1]), request_method))
   end
 
   def response_rack(status, header, body)
@@ -40,5 +40,9 @@ class RuleValidator
 
   def path_info
     @env['PATH_INFO']
+  end
+
+  def request_method
+    @env['REQUEST_METHOD']
   end
 end
