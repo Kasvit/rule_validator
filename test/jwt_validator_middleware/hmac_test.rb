@@ -1,5 +1,5 @@
 require_relative '../../lib/my_app'
-require_relative '../../lib/jwt_validator/jwt_validator'
+require_relative '../../lib/jwt_validator/validator'
 require 'jwt'
 require 'test/unit'
 require 'rack/test'
