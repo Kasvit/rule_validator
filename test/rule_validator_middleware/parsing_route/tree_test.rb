@@ -4,7 +4,7 @@ require_relative '../../../lib/rule_validator_middleware/parsing_route/node'
 
 class TreeTest < Minitest::Test
   def setup
-    @tree = Tree.new.freeze
+    @tree = ParsingRoute::Tree.new.freeze
     @tree.add_route('account/workspaces/:workspace_id/members/:id', 'account_workspaces_members').freeze
     @tree.add_route('account/workspaces/:workspace_id/projects/:id', 'account_workspaces_projects').freeze
     @tree.add_route('account/task/:id', 'account_task').freeze
