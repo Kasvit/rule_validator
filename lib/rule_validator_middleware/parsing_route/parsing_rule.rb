@@ -1,11 +1,10 @@
 require_relative '../../config_load'
 require_relative 'tree'
 require_relative 'node'
+require_relative '../exceptions'
 
 module ParsingRoute
   class ParsingRule
-
-    class RouteMissing < RuntimeError; end
 
     def initialize
       @routes = ConfigLoad.load_file('../config/tree_routes.yml')
@@ -17,7 +16,7 @@ module ParsingRoute
       ro = @tree.route_obj
       return { ro['name'].to_sym => ro.delete_if{|key| key == 'name' } } if @tree.include?(route)
 
-      raise RouteMissing
+      raise Exceptions::RouteMissing
     end
   end
 end

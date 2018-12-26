@@ -57,7 +57,7 @@ class MainTest < Test::Unit::TestCase
   def test_status_401_with_domen_not_from_white_list_invalid_token_v2
     header 'Authorization', "Bearer #{@valid_token}"
 
-    assert_raises(ParsingRoute::ParsingRule::RouteMissing) {get 'http://dots.com/tests'}
+    assert_raises(Exceptions::RouteMissing) {get 'http://dots.com/tests'}
   end
 
   def test_status_401_with_domen_not_from_white_list_invalid_token
