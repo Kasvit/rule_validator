@@ -4,6 +4,6 @@ use Rack::Reloader
 
 use RuleValidator
 use JwtValidator::Validator
-use WhiteListValidator
+use WhiteListValidator::Validator
 
 run MyApp.new
