@@ -1,4 +1,4 @@
-require_relative '../../lib/rule_validator_middleware/parsed_request'
+require_relative '../../lib/rule_validator/parsed_request'
 
 require "test/unit"
 require 'minitest/autorun'
@@ -6,7 +6,7 @@ require 'minitest/autorun'
 class ParsedRequestTest < Minitest::Test
 
   def setup
-    @request = ParsedRequest.new( {
+    @request = RuleValidator::ParsedRequest.new( {
       report_in_company_bp: {
         id: 123,
         bp_id: 'abc123',

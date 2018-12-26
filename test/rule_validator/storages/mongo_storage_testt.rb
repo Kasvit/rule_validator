@@ -1,10 +1,10 @@
 require 'minitest/autorun'
-require_relative '../../../lib/rule_validator_middleware/storages/mongo_storage'
+require_relative '../../../lib/rule_validator/storages/mongo_storage'
 
 class MongoTest < Minitest::Test
 
   def setup
-    @storage = MongoStorage.new
+    @storage = Storages::MongoStorage.new
   end
 
   def test_true_on_rule_report_in_company_bp_in_storage
