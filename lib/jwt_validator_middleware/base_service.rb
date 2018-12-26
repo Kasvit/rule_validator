@@ -1,7 +1,8 @@
 require_relative 'exceptions'
-
-class BaseService
-  def self.call(*args)
-    new(*args).call
+module JwtValidatior
+  class BaseService
+    def self.call(*args)
+      new(*args).call
+    end
   end
 end

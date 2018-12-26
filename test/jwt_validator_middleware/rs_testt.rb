@@ -4,7 +4,12 @@ require 'jwt'
 require 'test/unit'
 require 'rack/test'
 
-class JwtValidatiorTest < Minitest::Test
+class JwtValidatorTest < Test::Unit::TestCase
+  include Rack::Test::Methods
+
+  def app
+    JwtValidator::Validator.new(MyApp.new)
+  end
 
   def setup
     @rsa_private = OpenSSL::PKey::RSA.generate 2048
