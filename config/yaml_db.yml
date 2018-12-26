@@ -41,3 +41,14 @@
     :id: 123
   :methods: ['GET', 'PUT']
   :action: 'deny'
+:path_with_all_methods:
+  :resource: 'path with all methods'
+  :description: 'allow access to path'
+  :params:
+    :id: 123
+    :bp_id: 'abc123'
+    :report_id: 128
+  :participant:
+    :id: 123
+  :methods: "*"
+  :action: 'allow'

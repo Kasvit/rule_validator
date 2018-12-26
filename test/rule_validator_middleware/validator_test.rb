@@ -30,6 +30,13 @@ class ValidatorTest < Minitest::Test
         report_id: 128
       }
     }, "GET")
+    @request_for_all_methods = ParsedRequest.new({
+      path_with_all_methods: {
+        id: 123,
+        bp_id: 'abc123',
+        report_id: 128
+      }
+    }, "PATCH")
   end
 
   def test_valid_request
@@ -42,5 +49,9 @@ class ValidatorTest < Minitest::Test
 
   def test_not_allowed_request_with_good_params
     assert_equal false, @validator.valid?(@not_allowed_request)
+  end
+
+  def test_valid_request
+    assert_equal true, @validator.valid?(@request_for_all_methods)
   end
 end

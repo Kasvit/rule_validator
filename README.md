@@ -11,7 +11,7 @@
 
 ### Set the variable before running:
 ```
-ALGORITHM=hmac
-SECRET=secret
-ALG=HS256
+export ALGORITHM=hmac
+export SECRET=secret
+export ALG=HS256
 ```
