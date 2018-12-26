@@ -1,5 +1,6 @@
 require_relative 'storages/base_storage'
 require_relative 'parsed_request'
+
 class Validator
   attr_reader :storage
 
@@ -22,7 +23,7 @@ class Validator
   def valid_method?(request)
     all_methods = ["GET", "PUT", "POST", "PATCH", "DELETE"]
     rule = []
-    if @rule[:methods] = "*"
+    if @rule[:methods] == "*"
       rule = all_methods
     else
       rule = @rule[:methods]
