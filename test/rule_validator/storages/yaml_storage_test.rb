@@ -1,9 +1,9 @@
-require_relative '../../../lib/rule_validator_middleware/storages/yaml'
+require_relative '../../../lib/rule_validator/storages/yaml'
 require 'minitest/autorun'
 
 class YamlStorageTest < Minitest::Test
   def setup
-    @storage = Storages::Yaml.new
+    @storage = RuleValidator::Storages::Yaml.new
   end
 
   def test_true_on_rule_report_in_company_bp_in_storage

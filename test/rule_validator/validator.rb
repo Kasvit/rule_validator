@@ -1,12 +1,12 @@
 require_relative '../../lib/my_app'
-require_relative '../../lib/rule_validator_middleware/rule_validator'
+require_relative '../../lib/rule_validator/validator'
 require_relative '../../lib/config_load'
-require_relative '../../lib/rule_validator_middleware/parsing_route/parsing_rule'
-require_relative '../../lib/rule_validator_middleware/db_factory'
-require_relative '../../lib/rule_validator_middleware/storages/yaml'
-require_relative '../../lib/rule_validator_middleware/storages/redis'
-require_relative '../../lib/rule_validator_middleware/storages/mongo'
-require_relative '../../lib/rule_validator_middleware/validator'
+require_relative '../../lib/rule_validator/parsing_route/parsing_rule'
+require_relative '../../lib/rule_validator/db_factory'
+require_relative '../../lib/rule_validator/storages/yaml'
+require_relative '../../lib/rule_validator/storages/rediss'
+require_relative '../../lib/rule_validator/storages/mongo'
+require_relative '../../lib/rule_validator/db_data_validator'
 require 'test/unit'
 require 'rack/test'
 
@@ -21,7 +21,7 @@ class RuleValidatorTest < Test::Unit::TestCase
   end
 
   def app
-    RuleValidator.new(MyApp.new)
+    RuleValidator::Validator.new(MyApp.new)
   end
 
   def test_status_200_with_domen_dotss_route_account_workspaces_12_members_admin
