@@ -7,7 +7,7 @@
 
  Database of rules - config/rules_db.yml
 
- database: {yaml}, {redis}, {mongo}
+ database: {yaml}, {rediss}, {mongo}
 
 ### Set the variable before running:
 ```
