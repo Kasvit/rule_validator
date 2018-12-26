@@ -3,7 +3,7 @@ require_relative '../../../lib/rule_validator_middleware/parsing_route/parsing_r
 
 class ParsingRuleTest < Minitest::Test
   def setup
-    @pr = ParsingRule.new
+    @pr = ParsingRoute::ParsingRule.new
   end
 
   def test_object_on_valid_route_1

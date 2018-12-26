@@ -4,7 +4,7 @@ class RuleValidator
 
   def initialize(appl)
     @appl = appl
-    @pr = ParsingRule.new
+    @pr = ParsingRoute::ParsingRule.new
     @validator = Validator.new(DbFactory.db(db))
   end
 
