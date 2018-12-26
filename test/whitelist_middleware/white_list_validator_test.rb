@@ -10,7 +10,7 @@ class WhiteListValidatorTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    WhiteListValidator.new(MyApp.new)
+    WhiteListValidator::Validator.new(MyApp.new)
   end
 
   def test_status_401_with_without_token
