@@ -12,7 +12,7 @@ class ParsedRequestTest < Minitest::Test
         bp_id: 'abc123',
         report_id: 128
       }
-    })
+    }, "GET")
   end
 
   def test_parsed_request_name

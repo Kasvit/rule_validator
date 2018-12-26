@@ -31,6 +31,13 @@ class RuleValidatorTest < Test::Unit::TestCase
     assert_equal(last_response.status, 200)
   end
 
+  def test_status_401_with_domen_dotss_route_account_workspaces_12_members_admin_and_method_post
+    header 'X-Auth-User', 'alala'
+    post 'http://dotss.com/account/workspaces/12/members/admin'
+
+    assert_equal(last_response.status, 401)
+  end
+
   def test_status_401_with_domen_dotss_route_account_workspaces_122_members_admin
     get 'http://dotss.com/account/workspaces/122/members/admin'
 

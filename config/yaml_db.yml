@@ -19,7 +19,7 @@
   :participant:
     :id: 3
   :methods: ['GET', 'PUT']
-  :action: 'not_allow'
+  :action: 'deny'
 :account_workspaces_members:
   :resource: 'account_workspaces_members'
   :description: 'allow access to workspaces members'
@@ -30,3 +30,14 @@
     :id: 123
   :methods: ['GET', 'PUT']
   :action: 'allow'
+:not_allowed_path:
+  :resource: 'not_allowed'
+  :description: 'allow access to bp report'
+  :params:
+    :id: 123
+    :bp_id: 'abc123'
+    :report_id: 128
+  :participant:
+    :id: 123
+  :methods: ['GET', 'PUT']
+  :action: 'deny'
