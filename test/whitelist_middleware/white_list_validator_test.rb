@@ -1,7 +1,7 @@
 require_relative '../../lib/my_app'
-require_relative '../../lib/whitelist_middleware/white_list_validator'
+require_relative '../../lib/whitelist_validator/validator'
 require_relative '../../lib/config_load'
-require_relative '../../lib/whitelist_middleware/white_list_checker'
+require_relative '../../lib/whitelist_validator/checker'
 
 require 'test/unit'
 require 'rack/test'
