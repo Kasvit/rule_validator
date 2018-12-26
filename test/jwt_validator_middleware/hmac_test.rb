@@ -8,7 +8,7 @@ class JwtValidatorTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    JwtValidator.new(MyApp.new)
+    JwtValidator::Validator.new(MyApp.new)
   end
 
   def setup

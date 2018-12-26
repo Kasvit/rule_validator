@@ -28,7 +28,7 @@ class MainTest < Test::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    RuleValidator.new(JwtValidator.new(WhiteListValidator.new(MyApp.new)))
+    RuleValidator.new(JwtValidator::Validator.new(WhiteListValidator.new(MyApp.new)))
   end
 
   def setup
