@@ -2,9 +2,9 @@ require 'redis'
 require_relative 'base_storage'
 
 module Storages
-  class Rediss < BaseStorage
+  class Redis < BaseStorage
     def initialize
-      @redis_rules = Redis.new
+      @redis_rules = ::Redis.new
 
       @redis_rules.hmset('report_in_company_bp', :resource, 'report_in_company_bp',
                                                     :description, 'allow access to bp report',
