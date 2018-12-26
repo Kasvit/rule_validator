@@ -1,25 +1,4 @@
-#Dir["#{File.dirname(__FILE__)} /../lib/**/*.rb"].each { |file| require file }
-require_relative "../lib/config_load.rb"
-require_relative "../lib/jwt_validator/algorithms/hmac.rb"
-require_relative "../lib/jwt_validator/algorithms/rs256.rb"
-require_relative "../lib/jwt_validator/base_service.rb"
-require_relative "../lib/jwt_validator/exceptions.rb"
-require_relative "../lib/jwt_validator/validator.rb"
-require_relative "../lib/my_app.rb"
-require_relative "../lib/rule_validator/parsed_request.rb"
-require_relative "../lib/rule_validator/db_factory.rb"
-require_relative "../lib/rule_validator/parsing_route/node.rb"
-require_relative "../lib/rule_validator/parsing_route/parsing_rule.rb"
-require_relative "../lib/rule_validator/parsing_route/tree.rb"
-require_relative "../lib/rule_validator/validator.rb"
-require_relative "../lib/rule_validator/storages/base_storage.rb"
-require_relative "../lib/rule_validator/storages/mongo.rb"
-require_relative "../lib/rule_validator/storages/rediss.rb"
-require_relative "../lib/rule_validator/storages/yaml.rb"
-require_relative "../lib/rule_validator/db_data_validator.rb"
-require_relative "../lib/whitelist_validator/checker.rb"
-require_relative "../lib/whitelist_validator/validator.rb"
-
+Dir[File.dirname(File.absolute_path(__FILE__)) + '/../lib/**/*.rb'].each {|file| require file }
 require 'jwt'
 require 'test/unit'
 require 'rack/test'

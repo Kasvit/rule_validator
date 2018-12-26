@@ -1,12 +1,6 @@
+Dir[File.dirname(File.absolute_path(__FILE__)) + '/../../lib/rule_validator/**/*.rb'].each {|file| require file }
 require_relative '../../lib/my_app'
-require_relative '../../lib/rule_validator/validator'
 require_relative '../../lib/config_load'
-require_relative '../../lib/rule_validator/parsing_route/parsing_rule'
-require_relative '../../lib/rule_validator/db_factory'
-require_relative '../../lib/rule_validator/storages/yaml'
-require_relative '../../lib/rule_validator/storages/rediss'
-require_relative '../../lib/rule_validator/storages/mongo'
-require_relative '../../lib/rule_validator/db_data_validator'
 require 'test/unit'
 require 'rack/test'
 

@@ -1,7 +1,6 @@
+Dir[File.dirname(File.absolute_path(__FILE__)) + '/../../lib/whitelist_validator/**/*.rb'].each {|file| require file }
 require_relative '../../lib/my_app'
-require_relative '../../lib/whitelist_validator/validator'
 require_relative '../../lib/config_load'
-require_relative '../../lib/whitelist_validator/checker'
 
 require 'test/unit'
 require 'rack/test'
