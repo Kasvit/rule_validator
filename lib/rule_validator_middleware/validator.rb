@@ -16,7 +16,7 @@ class Validator
   private
 
   def valid_params?(request)
-    request.params == @rule[:params]
+     @rule[:params] == request.params
   end
 
   def valid_method?(request)
