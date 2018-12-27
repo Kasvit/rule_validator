@@ -1,9 +1,9 @@
-require_relative '../../../lib/rule_validator/storages/rediss'
+require_relative '../../../lib/rule_validator/storages/redis'
 require 'minitest/autorun'
 
 class RedisStorageTest < Minitest::Test
   def setup
-    @storage = RuleValidator::Storages::RedisStorage.new
+    @storage = RuleValidator::Storages::Redis.new
   end
 
   def test_true_on_rule_report_in_company_bp_in_storage
