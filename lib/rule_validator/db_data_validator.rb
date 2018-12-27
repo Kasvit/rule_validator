@@ -3,6 +3,10 @@ require_relative 'parsed_request'
 
 module RuleValidator
   class DbDataValidator
+    ALL_METHODS = ["GET", "PUT", "POST", "PATCH", "DELETE"].freeze
+    ANY_METHOD  = '*'.freeze
+    ALLOWED_ACTION = "allow".freeze
+
     attr_reader :storage
 
     def initialize(storage)
@@ -12,7 +16,7 @@ module RuleValidator
     def valid?(parsed_request)
       @rule = @storage.find_rule(parsed_request.name)
       return false unless @rule
-      valid_params?(parsed_request) &&  valid_method?(parsed_request) && allowed_action?
+      allowed_action? && valid_method?(parsed_request) && valid_params?(parsed_request)
     end
 
     private
@@ -22,18 +26,12 @@ module RuleValidator
     end
 
     def valid_method?(request)
-      all_methods = ["GET", "PUT", "POST", "PATCH", "DELETE"]
-      rule = []
-      if @rule[:methods] == "*"
-        rule = all_methods
-      else
-        rule = @rule[:methods]
-      end
+      rule = @rule[:methods] == ANY_METHOD ? ALL_METHODS : @rule[:methods]
       rule.include?(request.incoming_method)
     end
 
     def allowed_action?
-      @rule[:action] == "allow"
+      @rule[:action] == ALLOWED_ACTION
     end
   end
 end
